@@ -1,3 +1,4 @@
-body{
-    background-color: red
+#drawingCanvas{
+    border: 2px solid black;
+    
 }
