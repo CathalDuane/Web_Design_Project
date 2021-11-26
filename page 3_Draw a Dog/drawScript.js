@@ -1,32 +1,39 @@
+const toolbar = document.getElementById("toolbar");
+const canvas = document.getElementById("drawingCanvas");
+
+
 
 //event listener to call canvas,
-//'load' sets itstat when the page opens
-addEventListener('load',  function() {
+//'load' sets it to start when the page opens
+
     //query selector matched css selectors
-    const canvas = document.querySelector("#drawingCanvas");
+    
+    
     // context of canvas (workspace) 2d or 3d. 
     var contextCanvas = canvas.getContext("2d");
 
-
-    //resizing
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
 
-    //Below creating shapes, adjusting colour,sroke fill,etc//
-    // contextCanvas.strokeStyle = "red";
-    // contextCanvas.lineWidth = 5;
-    // contextCanvas.strokeRect(50,50,200,200);
+    //Calling Toolbar
 
 
-    //Drawing a line ///
-    // contextCanvas.beginPath();
-    // contextCanvas.moveTo(100,100);
-    // contextCanvas.lineTo(200,100);
-    // contextCanvas.lineTo(200,150);
-    // contextCanvas.closePath();
-    // contextCanvas.stroke();
+
+    //resizing
+    
 
     let painting = false;
+
+    toolbar.addEventListener('click', e =>{
+
+        if (e.target.id === 'clear'){
+            contextCanvas.clearRect(0,0, canvas.width,canvas.height);
+        }
+    });
+
+
+   
+
 
     //function to determine start position based on mouse position
     function startPosition(line){
@@ -46,7 +53,7 @@ addEventListener('load',  function() {
         if(!painting)return;
         
         // line style when mouse pressed and moving
-        contextCanvas.lineWidth = 10;
+        contextCanvas.lineWidth = document.getElementById("strokeWidth").value;
         contextCanvas.lineCap="round";
 
         //line movement
@@ -54,6 +61,8 @@ addEventListener('load',  function() {
         contextCanvas.stroke();
         contextCanvas.beginPath();
         contextCanvas.moveTo(line.clientX,line.clientY);
+
+        contextCanvas.stroke();
         
 
     }
@@ -62,8 +71,16 @@ addEventListener('load',  function() {
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", finishedPosition);
     canvas.addEventListener("mousemove", draw);
+
+  
+    toolbar.addEventListener('change', e =>{
+
+        if (e.target.id === 'strokeColour'){
+            contextCanvas.strokeStyle = e.target.value;
+        }
+    });
     
-});
+
 
 // posible responsive
 // window.addEventListener('resize', );
