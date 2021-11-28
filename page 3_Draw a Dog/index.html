@@ -8,36 +8,37 @@
         <link rel="stylesheet" href="../style/style.css">
     </head>
     <body>
+ 
+
+     
 
         <!--App Container-->
         <section class = "container">
 
             <!--ToolBar-->
             <div id = "toolbar">
-                <h1>Draw A Dog!</h1>
-
-                <!--Using input elements for tool selections (input does not require closing tag)-->
-
+                
+                
                 <!--Stroke colour selector-->
                 <label for = "strokeColour">Colour</label>
-                <input id = "strokeColour" type = "color" name = 'strokeColour'>
+                <input class = "tools" id = "strokeColour" type = "color" name = 'strokeColour'>
 
-                <!--Stroke width adjuster-->
+                  <!--Stroke width adjuster-->
                 <!--number type input - set start value to 5 so user can start straight away-->
                 <label for = "strokeWidth">Width</label>
-                <input id = "strokeWidth" type = "number" value="5" name = 'strokeWidth'>
+                <input class = "tools" id = "strokeWidth" type = "number" value="5" name = 'strokeWidth'>
 
-                <button id = "clearButton">Clear</button>
-
-
+                <button class = "tools" id = "clearButton">Clear</button> 
+                
             </div>
+                <!-- Canvas-->
 
-            <!--Canvas-->
             <div id = "drawingApp">
-                <canvas id = "drawingCanvas">canvas tag not supported</canvas>
-            </div>
+                    <canvas id = "drawingCanvas">canvas tag not supported</canvas>
 
+            </div>        
         </section>
+
         <script src="drawScript.js"></script>
     </body>
 </html>

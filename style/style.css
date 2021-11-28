@@ -1,4 +1,31 @@
+.container{
+    margin : 0px;
+    
+   
+ 
+}
+
 #drawingCanvas{
+   
+    
     border: 2px solid black;
+    /* vw/vh viewport */
+    width: 60vw;
+    height: 60vh;
+    
+}
+
+#toolbar{
+    background-color: aqua;
+    border: 2px solid black;
+    margin: 5px;
+    width: 60vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.tools{
+   
+    margin: 3px;
     
 }
