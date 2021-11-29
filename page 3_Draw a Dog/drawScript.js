@@ -3,84 +3,80 @@ const canvas = document.getElementById("drawingCanvas");
 
 
 
-//event listener to call canvas,
-//'load' sets it to start when the page opens
+// context of canvas (workspace) 2d or 3d. 
+const contextCanvas = canvas.getContext("2d");
 
-    //query selector matched css selectors
-    
-    
-    // context of canvas (workspace) 2d or 3d. 
-    var contextCanvas = canvas.getContext("2d");
+// const canvasOffsetx = canvas.offsetLeft;
+// const canvasOffsety = canvas.offsetTop;
 
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
 
-    //Calling Toolbar
+//Calling clear button 
 
+toolbar.addEventListener('click', e =>{
+    if (e.target.id === 'clear'){
+        contextCanvas.clearRect(0,0, canvas.width,canvas.height);
+    }
+});
 
+//get value from colour picker
+toolbar.addEventListener('change', e =>{
 
-    //resizing
-    
+    if (e.target.id === 'strokeColour'){
+        contextCanvas.strokeStyle = e.target.value;
+    }
+});
 
-    let painting = false;
-
-    toolbar.addEventListener('click', e =>{
-
-        if (e.target.id === 'clear'){
-            contextCanvas.clearRect(0,0, canvas.width,canvas.height);
-        }
-    });
-
-
-   
-
+    //----------drawing functions and event Listeners--------------
 
     //function to determine start position based on mouse position
-    function startPosition(line){
-        painting = true;
-        draw(line);
+let painting = false;
 
-    }
+function startPosition(line){
+    painting = true;
+    draw(line);
 
-    //function to determine end position based on mouse position
-    function finishedPosition(){
-        painting = false;
-        contextCanvas.beginPath();
-    }
+}
 
-    //function for actual drawing
-    function draw(line){
-        if(!painting)return;
+//function to determine end position based on mouse position
+function finishedPosition(){
+    painting = false;
+    contextCanvas.beginPath();
+}
+
+//function for actual drawing
+function draw(line){
+    if(!painting)return;
         
-        // line style when mouse pressed and moving
-        contextCanvas.lineWidth = document.getElementById("strokeWidth").value;
-        contextCanvas.lineCap="round";
+// line style when mouse pressed and moving
+    contextCanvas.lineWidth = document.getElementById("strokeWidth").value;
+    contextCanvas.lineCap="round";
 
-        //line movement
-        contextCanvas .lineTo(line.clientX, line.clientY);
-        contextCanvas.stroke();
-        contextCanvas.beginPath();
-        contextCanvas.moveTo(line.clientX,line.clientY);
+//line movement
+    contextCanvas .lineTo(line.clientX, line.clientY);
+    contextCanvas.stroke();
+    contextCanvas.beginPath();
+    contextCanvas.moveTo(line.clientX,line.clientY);
 
-        contextCanvas.stroke();
         
-
     }
 
-    //mouse controls for drawing
-    canvas.addEventListener("mousedown", startPosition);
-    canvas.addEventListener("mouseup", finishedPosition);
-    canvas.addEventListener("mousemove", draw);
+//mouse controls for drawing
+canvas.addEventListener("mousedown", startPosition);
+canvas.addEventListener("mouseup", finishedPosition);
+canvas.addEventListener("mousemove", draw);
+
+//Touch controls for drawing
+//Touchstart event/function
+canvas.addEventListener("touchstart", startPosition);
+canvas.addEventListener("touchend", finishedPosition);
+canvas.addEventListener("touchmove", draw);
+
 
   
-    toolbar.addEventListener('change', e =>{
-
-        if (e.target.id === 'strokeColour'){
-            contextCanvas.strokeStyle = e.target.value;
-        }
-    });
     
+    
+  
 
 
-// posible responsive
-// window.addEventListener('resize', );
