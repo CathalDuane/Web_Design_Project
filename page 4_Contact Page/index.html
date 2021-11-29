@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Contact Page</title>
-        <link rel="stylesheet" href="../style/style.css">
-    </head>
-    <body>
+	<head>
+		<title>Dog Rescue Ireland</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="../style/style.css" />
+	</head> 
+		<body class="Main">
+		<div class="container">
+			<img src="../page_1_Homepage/img/dogHeader2.jpeg" class="img" alt="Adopt Dont Shop">
+		</div>
+
+        <!--nav bar-->  
+    <section class= "row">    
+		<nav class= "navbar navbar-expand-lg navbar-light bg-light">
+
+    
+        <div class="container">
+	         <nav class="navbar navbar-light" style="background-color: white;">
+            <a class="navbar-brand" href="#"><img src="../page_1_Homepage/img/DogLogo2.jpg" alt="Dog Rescue Ireland" height="100" width="100"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
         
-        <script src="contactScript.js"></script>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../page_1_Homepage/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Adopt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>  
+        </nav>
+    </div>
+    </section>
+
+    <!-- user inputs-->
+    <section class = "container">
+        <form>
+            <div class = "row">
+                <h1 class = "subheader col-12">Contact us</h1>
+                <!--name input-->
+                <p class = "subheader col-12" id = "nameInput">Email:</p> 
+                <input class = "col-5 " type = "text" id = "name" />
+
+                <!--email input-->
+                <p class = "subheader col-12" id = "emailInput">Email:</p> 
+                <input class = "col-5 " type = "email" id = "email" />
+
+                <!--message input-->
+                <p class = "subheader col-12" id = "messageInput">Message:</p> 
+                <input class = "col-5 " type = "text" id = "message" />
+
+               
+            </div>
+             <!--submit button-->
+             <button class = "col-3 " id = "submitBtn">Submit</button>
+        </form>
+    </section>
+
+
+    <!-- Map and address-->
+    <section class = "container">
+        <div class = "row">
+            <h1 class = "subheader col-12">Visit us</h1>
+
+            <div class = "col-6 address">
+                <p>Address line 1</p>
+                <p>Address line 1</p>
+                <p>Address line 1</p>
+            </div>
+            <div class = "col-6 map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110785.4938304157!2d-84.69268318669488!3d29.805195686035148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88eb69c55e3562b1%3A0x9149bce11dd1a325!2sDog%20Island!5e0!3m2!1sen!2sfr!4v1638145258467!5m2!1sen!2sfr" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+	
+
+		
+		<script src="contactScript.js"></script>
+		
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+		</body>
+
+        
+    
+        
+        
     </body>
 </html>
