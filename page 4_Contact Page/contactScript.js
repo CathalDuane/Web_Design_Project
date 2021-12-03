@@ -1,4 +1,5 @@
 let messageList = [];
+let date;
 
 //function to add message to list and push to console
 function addMessage(){
@@ -8,10 +9,11 @@ function addMessage(){
     //input data into let message
     let message = {
         //pulling data from inputs
-        id: Date.now(),
+        //date log time of message
+        date: Date.now(),
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
-        year: document.getElementById('message').value
+        message: document.getElementById('message').value
     }
 
     //push message to messageList arrauy

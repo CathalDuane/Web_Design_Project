@@ -14,11 +14,12 @@ canvas.width = window.innerWidth;
 
 //Calling clear button 
 
-toolbar.addEventListener('click', e =>{
-    if (e.target.id === 'clear'){
-        contextCanvas.clearRect(0,0, canvas.width,canvas.height);
-    }
-});
+
+document.getElementById('clearButton').addEventListener('click', function() {
+    contextCanvas.clearRect(0, 0, canvas.width, canvas.height);
+  }, false);
+
+
 
 //get value from colour picker
 toolbar.addEventListener('change', e =>{
@@ -26,6 +27,8 @@ toolbar.addEventListener('change', e =>{
     if (e.target.id === 'strokeColour'){
         contextCanvas.strokeStyle = e.target.value;
     }
+
+    
 });
 
     //----------drawing functions and event Listeners--------------
@@ -57,10 +60,8 @@ function draw(line){
     contextCanvas .lineTo(line.clientX, line.clientY);
     contextCanvas.stroke();
     contextCanvas.beginPath();
-    contextCanvas.moveTo(line.clientX,line.clientY);
-
-        
-    }
+    contextCanvas.moveTo(line.clientX,line.clientY);       
+}
 
 //mouse controls for drawing
 canvas.addEventListener("mousedown", startPosition);
@@ -74,7 +75,6 @@ canvas.addEventListener("touchend", finishedPosition);
 canvas.addEventListener("touchmove", draw);
 
 
-  
     
     
   

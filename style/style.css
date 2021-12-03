@@ -1,4 +1,93 @@
+h1{
+    font-family: 'Corben';
+    font-size: 18pt;
+}
+
+p{
+    font-family: 'Nobile', sans-serif;;
+    font-size: 12pt;
+    padding-top: 1rem ;
+}
+
 #drawingCanvas{
-    border: 2px solid black;
+    border: 2px solid rgb(197, 192, 192);
     
 }
+
+
+/* Contact Page  Styles*/
+
+.contactContainer{
+    padding: 2rem;
+}
+
+.mapContainer{
+    background-color: lightgoldenrodyellow;
+
+}
+
+.map{
+    padding-right: 2rem; 
+}
+
+button{
+    margin-top: 2rem;
+}
+
+/* Drawing App */
+
+#toolbar{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+
+
+#strokeColour{
+    margin: 1rem;
+}
+
+#strokeWidth{
+    margin: 1rem;
+}
+#clearButton{
+    margin: 1rem;
+}
+
+
+
+    
+
+/* Drawing App: specific break points */
+
+    /*  Small devices (landscape phones, 576px and up) */ 
+    @media (min-width: 576px) { 
+        #drawingCanvas{
+            height: 60%;
+            width: 80%;
+        }   
+    } 
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) { 
+        #drawingCanvas{
+            height: 70%;
+            width: 70%;
+        }
+     }
+    
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) { 
+        #drawingCanvas{
+            height: 90%;
+            width: 70%;      
+        }   
+    }
+    /* X-Large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) { 
+        #drawingCanvas{
+            height: 90%;
+            width: 60%;
+        }       
+    }
+
