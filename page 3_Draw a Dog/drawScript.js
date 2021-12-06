@@ -1,34 +1,29 @@
 const toolbar = document.getElementById("toolbar");
 const canvas = document.getElementById("drawingCanvas");
 
-
-
 // context of canvas (workspace) 2d or 3d. 
-const contextCanvas = canvas.getContext("2d");
+const ctx = canvas.getContext("2d");
 
-// const canvasOffsetx = canvas.offsetLeft;
-// const canvasOffsety = canvas.offsetTop;
+var rect = canvas.getBoundingClientRect();
+canvas.width = rect.width;
+canvas.height = rect.height;
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
+ //Attempt to adjust for change in cooredinates after scrolling
+// var x=line.clientX-rect.left;
+// var y=line.clientY-rect.top;
+
 
 //Calling clear button 
-
-
 document.getElementById('clearButton').addEventListener('click', function() {
-    contextCanvas.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }, false);
-
-
 
 //get value from colour picker
 toolbar.addEventListener('change', e =>{
 
     if (e.target.id === 'strokeColour'){
-        contextCanvas.strokeStyle = e.target.value;
-    }
-
-    
+        ctx.strokeStyle = e.target.value;
+    }   
 });
 
     //----------drawing functions and event Listeners--------------
@@ -39,13 +34,12 @@ let painting = false;
 function startPosition(line){
     painting = true;
     draw(line);
-
 }
 
 //function to determine end position based on mouse position
 function finishedPosition(){
     painting = false;
-    contextCanvas.beginPath();
+    ctx.beginPath();
 }
 
 //function for actual drawing
@@ -53,14 +47,23 @@ function draw(line){
     if(!painting)return;
         
 // line style when mouse pressed and moving
-    contextCanvas.lineWidth = document.getElementById("strokeWidth").value;
-    contextCanvas.lineCap="round";
+    ctx.lineWidth = document.getElementById("strokeWidth").value;
+    ctx.lineCap="round";
 
 //line movement
-    contextCanvas .lineTo(line.clientX, line.clientY);
-    contextCanvas.stroke();
-    contextCanvas.beginPath();
-    contextCanvas.moveTo(line.clientX,line.clientY);       
+
+    //Client x and client y are coordinates of users mouse. This needs to be offset to align mouse and line.
+    var mouseX = line.clientX - ctx.canvas.offsetLeft;
+    var mouseY = line.clientY - ctx.canvas.offsetTop;
+
+    ctx.lineTo(mouseX, mouseY);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(mouseX, mouseY); 
+    
+    //show current coordinates of cursor
+    var status = document.getElementById('status');
+    status.innerHTML = mouseX +"|" +mouseY;
 }
 
 //mouse controls for drawing
