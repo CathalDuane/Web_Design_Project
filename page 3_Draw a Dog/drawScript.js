@@ -26,9 +26,9 @@ toolbar.addEventListener('change', e =>{
     }   
 });
 
-    //----------drawing functions and event Listeners--------------
+//----------drawing functions and event Listeners--------------
 
-    //function to determine start position based on mouse position
+//function to determine start position based on mouse position
 let painting = false;
 
 function startPosition(line){

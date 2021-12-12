@@ -1,33 +1,23 @@
-let messageList = [];
-let date;
 
-//function to add message to list and push to console
-function addMessage(){
-    //stop default action
-    event.preventDefault();  
-    
-    //input data into let message
-    let message = {
-        //pulling data from inputs
-        //date log time of message
-        date: Date.now(),
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
+
+//Cathal: Function to change HTML to show user input was succesful (Does not account for required email validation)
+function validateForm() {
+    let x = document.forms["contactForm"]["nameInput"].value;
+    let y = document.forms["contactForm"]["emailInput"].value;
+    if (x == "" || y == "") {
     }
+    else if (x == "" && y == ""){
+    }
+    else{
+        submitSuccess()
+    }
+  }
 
-    //push message to messageList arrauy
-    messageList.push(message);
-    document.forms[0].reset();
+function submitSuccess(){
+    event.preventDefault;
+    document.getElementById("contactInput").innerHTML = "<h2>Thank you for your message </h2><br> We will contact you soon";    
+}
 
-    console.warn('added' , {messageList} );  
-}           
 
-//saving to localStorage
-//JSON String to transmit data to different places eg. server to client
-localStorage.setItem('userMessageList', JSON.stringify(messageList));
+
     
-//button event listener
-document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('submitBtn').addEventListener('click', addMessage);
-});
