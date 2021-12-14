@@ -9,10 +9,6 @@ p{
     padding-top: 1rem ;
 }
 
-#drawingCanvas{
-    border: 2px solid rgb(197, 192, 192);
-    
-}
 a{
     text-align: center;
     font-family: 'Nobile', sans-serif;;
@@ -24,7 +20,8 @@ a{
 }
 
 
-/* Contact Page  Styles*/
+
+/* Cathal: Contact Page Styles-------------------*/
 
 .contactContainer{
     padding: 2rem;
@@ -38,61 +35,104 @@ a{
     padding-right: 2rem; 
 }
 
-button{
+.messageBox{
+    height: 10rem;   
+}
+
+.submitBtn{
+    margin-top: 1rem;
+}
+
+/*Cathal: NewsletterPage ------------------------*/
+
+#monthList{
+    margin:0;
+    padding: 0;
+}
+.monthH1{
+    margin-top: 3rem;
+    margin-bottom: 2rem; 
+}
+
+h2{
     margin-top: 2rem;
+    margin-bottom: 2rem; 
 }
 
-/* Drawing App -------------------*/
-
-#toolbar{
-    display: flex;
-    align-items: center;
-    justify-items: center;
- 
+/*Cathal:  Month Drop down show/hide */
+.dropDownContent {
+    display: none;
 }
+.show {display: block;}
 
-#strokeColour{
-    margin: 1rem;
+/*Cathal: j query slider */
+#slider {
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto 0 auto;
+    border-radius: 4px;
 }
-
-#strokeWidth{
-    margin: 1rem;
-}
-#clearButton{
-    margin: 1rem;
-}
-
-/* Drawing App: specific break points */
-    /*  Small devices (landscape phones, 576px and up) */ 
-    @media (min-width: 576px) { 
-        #drawingCanvas{
-            height: 300px;
-            width: 450px; 
-        }  
-    } 
-
-    /* Medium devices (tablets, 768px and up) */
-    @media (min-width: 768px) { 
-        #drawingCanvas{
-            height: 350px;
-            width: 500px;
-        }
-     }
     
-    /* Large devices (desktops, 992px and up) */
-    @media (min-width: 992px) { 
-        #drawingCanvas{
-            height: 550px;
-            width: 700px;
-        }  
-    }
+#slider ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    list-style: none;
+}
+    
+#slider ul li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 800px;
+    height: 600px;
+    background: #ccc;
+    text-align: center;
+    line-height: 300px;
+}
+    
+a.control_prev, a.control_next {
+    position: absolute;
+    top: 40%;
+    z-index: 999;
+    display: block;
+    padding: 4% 3%;
+    width: auto;
+    height: auto;
+    background: #2a2a2a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+    
+a.control_prev:hover, a.control_next:hover {
+    opacity: 1;
+    
+}
+    
+a.control_prev {
+    border-radius: 0 2px 2px 0;
+}
+    
+a.control_next {
+    right: 0;
+    border-radius: 2px 0 0 2px;
+}
 
-    /* X-Large devices (large desktops, 1200px and up) */
-    @media (min-width: 1200px) { 
-        
-        #drawingCanvas{
-            height: 650px;
-            width: 800px;
-        }    
-    }
-
+/*Cathal:  bootstrap time  */
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .carousel-fade .active.carousel-item-start,
+  .carousel-fade .active.carousel-item-end {
+    transition: opacity 0.5s 0.5s;
+  }
+    
+    
