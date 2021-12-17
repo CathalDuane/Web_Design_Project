@@ -1,25 +1,24 @@
-h1{
-    font-family: 'Corben';
-    font-size: 18pt;
+
+
+
+h4{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 p{
-    font-family: 'Nobile', sans-serif;;
     font-size: 12pt;
     padding-top: 1rem ;
 }
 
 a{
     text-align: center;
-    font-family: 'Nobile', sans-serif;;
     font-size: 12pt;
     padding-top: 1rem ;
     color: black;
     text-decoration: none;
     margin-bottom: 2rem;
 }
-
-
 
 /* Cathal: Contact Page Styles-------------------*/
 
@@ -43,11 +42,27 @@ a{
     margin-top: 1rem;
 }
 
+/* Cathal: iframe google map responsive */
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
 /*Cathal: NewsletterPage ------------------------*/
 
 #monthList{
     margin:0;
     padding: 0;
+    background-color:  lightgoldenrodyellow;
 }
 .monthH1{
     margin-top: 3rem;
@@ -59,13 +74,17 @@ h2{
     margin-bottom: 2rem; 
 }
 
-/*Cathal:  Month Drop down show/hide */
+/*Cathal:  Month Drop down show/hide --*/
+
 .dropDownContent {
     display: none;
 }
 .show {display: block;}
 
-/*Cathal: j query slider */
+
+    
+
+/*Cathal: jQuery slider */
 #slider {
     position: relative;
     overflow: hidden;
@@ -80,18 +99,39 @@ h2{
     height: 200px;
     list-style: none;
 }
+
+/* Phone Size
+/* @media only screen and (max-width: 300px) {
+    #slider ul li {
+        position: relative;
+        display: block;
+        float: left;
+        margin: 0;
+        padding:0px;
+        max-width: 100px;
+        max-height: 50px;
+        background: #ccc;
+        text-align: center;
+        line-height: 300px;
+
+        }
+} */
+
+/* Phone Size */
+@media only screen and (max-width: 1200px) {
+    #slider ul li {
+        position: relative;
+        display: block;
+        float: left;
+        margin: 0;
+        
+        max-width: 500px;
+        max-height: 400px;
+        background: #ccc;
+        text-align: center;
+        line-height: 300px;
     
-#slider ul li {
-    position: relative;
-    display: block;
-    float: left;
-    margin: 0;
-    padding: 0;
-    width: 800px;
-    height: 600px;
-    background: #ccc;
-    text-align: center;
-    line-height: 300px;
+    }
 }
     
 a.control_prev, a.control_next {
@@ -99,7 +139,7 @@ a.control_prev, a.control_next {
     top: 40%;
     z-index: 999;
     display: block;
-    padding: 4% 3%;
+    padding: 3% 3%;
     width: auto;
     height: auto;
     background: #2a2a2a;
@@ -122,17 +162,115 @@ a.control_prev {
     
 a.control_next {
     right: 0;
-    border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px; 
 }
 
-/*Cathal:  bootstrap time  */
+
+
+   
+/*Cathal: bootstrap fade in transitions  ---*/
 .carousel-item {
     transition: transform 0.6s ease-in-out;
-  }
+}
   
   .carousel-fade .active.carousel-item-start,
   .carousel-fade .active.carousel-item-end {
     transition: opacity 0.5s 0.5s;
-  }
+}
+
+.quiz{
+    background-color: lightgoldenrodyellow;
+}
+
+/* Cathal: Quiz section ---*/
+#resultsBtn{
+    margin: 2rem;
+}
+.submitBtn{
+    margin-top: 1rem;
+}
+label{
+    font-size: 12px;
+}
     
-    
+
+/*Cathal: new jQuery Slider_January----*/
+/* img {
+    width: 100%;
+}
+.height {
+    height: 10px;
+} */
+       
+/* Image-container design */
+/* .image-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+}
+       
+.next {
+    right: 0;
+}
+        */
+/* Next and previous icon design */
+/* .previous,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    margin-top: -25px;
+} */
+       
+/* caption decorate */
+/* .captionText {
+    color: #000000;
+    font-size: 14px;
+    position: absolute;
+    padding: 12px 12px;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+} */
+       
+ /* Slider image number */
+/* .slideNumber {
+    background-color: #5574C5;
+    color: white;
+    border-radius: 25px;
+    right: 0;
+    opacity: .5;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    position: absolute;
+}
+.fa {
+    font-size: 32px;
+}
+       
+.fa:hover {
+    transform: rotate(360deg);
+    transition: 1s;
+    color: white;
+}
+       
+.footerdot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.5s ease;
+}
+       
+.active,
+.footerdot:hover {
+    background-color: black;
+} */
